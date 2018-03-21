@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Bienvenido
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formLogin">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Mail</ion-label>
+        <ion-input type="text" formControlName="mail" [(ngModel)]="mail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </form>
+  <button ion-button full>Ingresar</button>
+  <button ion-button full color="dark" (click)="administrador()">Administrador</button>
+</ion-content>

@@ -10,14 +10,34 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiProvider {
   route: string = "http://localhost/appFriends/generic_App/API/index.php/"; //servidor local
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
-  verificarUsuario(mail,password){
+  verificarUsuario(mail, password) {
     var data = {
-      "mail":mail,
-      "password":password
-    } 
+      "mail": mail,
+      "password": password
+    }
     return this.http.post(this.route + "usuarios/verificarUsuario", data).toPromise();
   }
-
+  token(formData) {
+    var body = {
+      "email": formData[0].email,
+      "tipo": formData[0].tipo,
+      "nombre": formData[0].nombre,
+      "apellido": formData[0].apellido,
+      "img": formData[0].img
+    }
+    return this.http.post(this.route + "crearToken", body).toPromise();
+  }
+  verificarToken(formData) {
+    var body = {
+      "token": formData[0].token
+    }
+    return this.http.post(this.route + "verificarToken", body).toPromise();
+  }
+  payLoad(formData){    
+    var body = {"token" : formData[0].token
+               }         
+   return this.http.post(this.route + "payLoad", body).toPromise();
+  }
 }

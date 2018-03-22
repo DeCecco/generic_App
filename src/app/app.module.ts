@@ -19,12 +19,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 export const firebaseConfig  = {
-  apiKey: "AIzaSyAhU9S_jk3tRU0pxYft15f7wYa-3yuwcSY",
-  authDomain: "asistencia-63f29.firebaseapp.com",
-  databaseURL: "https://asistencia-63f29.firebaseio.com",
-  projectId: "asistencia-63f29",
-  storageBucket: "asistencia-63f29.appspot.com",
-  messagingSenderId: "1053669090196"
+ 
 };
 
 @NgModule({
